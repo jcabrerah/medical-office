@@ -17,6 +17,16 @@ class HomePage extends Component<PropsType> {
         history.push("/login");
     }
 
+    aboutClick = () => {
+        const history = this.props.history;
+        history.push("/about");
+    }
+
+    scheduleAppointmentClick = () => {
+        const history = this.props.history;
+        history.push("/scheduleappointment");
+    }
+
     constructor(props: any) {
         super(props);
         this.state = {disable: false};  
@@ -30,6 +40,20 @@ class HomePage extends Component<PropsType> {
                     color="primary"
                     name="signIn" 
                     onClick={this.signInClick}>SignIn
+                </Button>
+                <Button 
+                    data-testid="about-button" 
+                    variant="contained" 
+                    color="primary"
+                    name="about" 
+                    onClick={this.aboutClick}>About
+                </Button>
+                <Button 
+                    data-testid="schedule-appointment-button" 
+                    variant="contained" 
+                    color="primary"
+                    name="about" 
+                    onClick={this.scheduleAppointmentClick}>ScheduleAppointment
                 </Button>
             </div>
             

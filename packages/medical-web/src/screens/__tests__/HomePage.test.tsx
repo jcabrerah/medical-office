@@ -40,3 +40,23 @@ describe("Render Login", () =>{
     expect(signInButton.length).toEqual(1);
   })
 })
+
+describe("Render about", () =>{
+  it("should render about button", ()=>{
+    render(<MemoryRouter><HomePage /></MemoryRouter>)
+
+    const aboutButton = screen.getAllByText("About")
+
+    expect(aboutButton.length).toEqual(1);
+  })
+})
+
+describe("Render schedule medical appointment button", () =>{
+  it("should render medical appointment button", ()=>{
+    render(<MemoryRouter><HomePage /></MemoryRouter>)
+
+    const scheduleAppointmentButton = screen.getAllByText("ScheduleAppointment")
+
+    expect(scheduleAppointmentButton.length).toEqual(1);
+  })
+})

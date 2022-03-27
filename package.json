@@ -4,6 +4,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "start": "lerna --scope=medical-app run start --stream --",
+    "test": "lerna --scope=medical-app run test --stream --",
     "version": "lerna version --conventional-commits --yes"
   },
   "devDependencies": {
