@@ -12,6 +12,11 @@ describe("LoginPage screen", () => {
   beforeEach(() => {
      });
 
+  it("main bar must be rendered", async() => {
+    render(<MemoryRouter><HomePage/></MemoryRouter>);
+    expect(screen.getByTestId('main-bar')).toBeInTheDocument();
+  })
+
   it("should be redirect to login if user is not authenticated ", async () => {
     const history = createMemoryHistory();
     const { getByTestId } = render(
@@ -55,7 +60,7 @@ describe("Render schedule medical appointment button", () =>{
   it("should render medical appointment button", ()=>{
     render(<MemoryRouter><HomePage /></MemoryRouter>)
 
-    const scheduleAppointmentButton = screen.getAllByText("ScheduleAppointment")
+    const scheduleAppointmentButton = screen.getAllByText("Schedule")
 
     expect(scheduleAppointmentButton.length).toEqual(1);
   })

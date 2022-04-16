@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Button from '@material-ui/core/Button';
 import { withRouter } from "react-router-dom";
 import {RouteComponentProps} from "react-router";
+import MainBar from "../components/main-bar/MainBar"
 
 type PathParamsType = {
     history: any
@@ -22,6 +23,11 @@ class HomePage extends Component<PropsType> {
         history.push("/about");
     }
 
+    blogClick = () => {
+        const history = this.props.history;
+        history.push("/blog");
+    }
+
     scheduleAppointmentClick = () => {
         const history = this.props.history;
         history.push("/scheduleappointment");
@@ -34,7 +40,11 @@ class HomePage extends Component<PropsType> {
     render() {
         return (
             <div >
-                <Button 
+                <MainBar pages={[{page:'About', route:"/about"},
+                    {page:'Schedule', route:"/scheduleappointment"},
+                    {page:'blog', route:"/blog"}, 
+                    {page: 'other', route:"/other"}]} />
+                {/* <Button 
                     data-testid="signIn-button" 
                     variant="contained" 
                     color="primary"
@@ -54,7 +64,7 @@ class HomePage extends Component<PropsType> {
                     color="primary"
                     name="about" 
                     onClick={this.scheduleAppointmentClick}>ScheduleAppointment
-                </Button>
+                </Button> */}
             </div>
             
         );
